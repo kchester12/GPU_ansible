@@ -1,0 +1,7 @@
+[gpu_nodes]
+gpunode01
+gpunode02
+
+[gpu_nodes:vars]
+gpu_harden_pam_admin_users=['root']
+gpu_harden_pam_admin_groups=['hpcadmins']

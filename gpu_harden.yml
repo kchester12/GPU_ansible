@@ -1,0 +1,10 @@
+---
+# Harden Slurm GPU compute nodes (Rocky Linux 9).
+# Run in check mode against one node first:
+#   ansible-playbook -i inventory gpu_harden.yml --check --diff -l gpunode01
+- name: Harden Slurm GPU compute nodes
+  hosts: gpu_nodes
+  become: true
+  serial: "{{ gpu_harden_serial | default('25%') }}"
+  roles:
+    - gpu_harden
